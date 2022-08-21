@@ -3,8 +3,8 @@ package com.ril.controller;
 import com.ril.entity.User;
 import com.ril.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
+
 import javax.validation.Valid;
 import java.util.List;
 
@@ -18,7 +18,7 @@ public class UserController {
 
 
     @PostMapping("/users")
-    public User addUser(@Valid @RequestBody User user){
+    public User addUser(@RequestBody @Valid User user){
         return userService.addUser(user);
     }
     @GetMapping("/users")
